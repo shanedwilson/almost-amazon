@@ -16,17 +16,19 @@ const book = [
 
 const createBookCard = () => {
   for (let i = 0; i < book.length; i++) {
-    newString += `<div class="card" id="store-card" style="width: 18rem;">
+    newString += `<div class="row">
+    <div class="col-sm-3 offset-md-2">
+    <div class="card" id="store-card" style="width: 15rem;">
         <img class="card-img-top" src="${book[i].image}" alt="${
       book[i].imageAlt
     }">
         <div class="card-body">
             <h5 class="card-title">${book[i].title}</h5>
             <p class="card-text">${book[i].description}</p>
-            <h6 class="card-price">${book[i].price}</h6>
+            <h6 class="card-price float-left">${book[i].price}</h6>
             <button id="cart-button${[
               i
-            ]}" type="button" class="btn btn-primary">Add To Cart</button>
+            ]}" type="button" class="btn btn-primary float-right">Add To Cart</button>
         </div>
     </div>`;
   }
