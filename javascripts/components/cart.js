@@ -1,9 +1,10 @@
 import { printToDom } from "../helpers/util.js";
-import { book } from "./store.js";
+import { getBook } from "./store.js";
 
 let cartString = "";
 
 const createCartCard = () => {
+    const book = getBook(); 
   for (let i = 0; i < book.length; i++) {
     cartString += `    <div class="col-sm-3">
     <div class="card" id="cart-card" style="width: 13rem;">
