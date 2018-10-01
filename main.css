@@ -1,3 +1,14 @@
 body {
-    background-color: aquamarine;
+  background-color: aquamarine;
+}
+
+h1 {
+  font-family: "Luckiest Guy", cursive;
+  text-align: center;
+  font-size: 4em;
+  margin: 50px;
+}
+
+.card-text, .card-title {
+  font-family: "Bitter", serif;
 }
