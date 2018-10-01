@@ -14,6 +14,10 @@ const book = [
   }
 ];
 
+const getBook = () => {
+    return book;
+}
+
 const createBookCard = () => {
   for (let i = 0; i < book.length; i++) {
     newString += `
@@ -45,4 +49,4 @@ const addToCartButtonEvent = () => {
   }
 };
 
-export { createBookCard, addToCartButtonEvent, book };
+export { createBookCard, addToCartButtonEvent, getBook };
