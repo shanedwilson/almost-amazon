@@ -16,8 +16,8 @@ const book = [
 
 const createBookCard = () => {
   for (let i = 0; i < book.length; i++) {
-    newString += `<div class="row">
-    <div class="col-sm-3 offset-md-2">
+    newString += `
+    <div class="col-sm-3">
     <div class="card" id="store-card" style="width: 15rem;">
         <img class="card-img-top" src="${book[i].image}" alt="${
       book[i].imageAlt
