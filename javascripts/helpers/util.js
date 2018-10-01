@@ -1,6 +1,6 @@
 const printToDom = (stringToPrint, divId) => {
-    let selectedDiv = document.getElementById(divID);
-    selectedDiv.innerHTML = stringToPrint;    
-}
+  let selectedDiv = document.getElementById(divId);
+  selectedDiv.innerHTML = stringToPrint;
+};
 
-export{printToDom};
+export { printToDom };
