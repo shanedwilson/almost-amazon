@@ -9,6 +9,31 @@ h1 {
   margin: 50px;
 }
 
-.card-text, .card-title {
+.card-text,
+.card-title {
   font-family: "Bitter", serif;
+}
+
+#cart-header,
+#cart-total,
+#cart-title {
+  text-align: center;
+}
+
+#store-container {
+  display: flex;
+}
+
+.card {
+  display: inline-block;
+}
+
+#cartCard {
+  margin-right: 25px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#bookCard {
+  margin-left: 25px;
 }
