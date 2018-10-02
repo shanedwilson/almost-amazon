@@ -10,4 +10,4 @@ const bookDiscount = (selectedPrice) => {
   return newPrice;
 };
 
-export { printToDom, bookDiscount, newPrice};
+export { printToDom, bookDiscount };

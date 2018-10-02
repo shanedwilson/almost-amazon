@@ -1,9 +1,7 @@
-import { printToDom, bookDiscount, newPrice} from "../helpers/util.js";
-// import { selectedBook } from "./store.js";
+import { printToDom, bookDiscount} from "../helpers/util.js";
 
 let cartString = "";
 let counter = "0"
-// let discountPrice = newPrice;
 
 const createCartCard = (selectedTitle, selectedPrice) => {
     cartString += `<div id="${counter}"class="cart-item">`;
@@ -13,11 +11,9 @@ const createCartCard = (selectedTitle, selectedPrice) => {
     cartString += `</div>`;
     printToDom(cartString, "cartCard")
     counter ++;
-    // bookDiscount(selectedPrice)
-    // console.log(newPrice)
 };
 
-const discountClick = (newPrices) => {
+const discountClick = () => {
     let buttons = document.getElementsByClassName("discount-btn")
     for (let i = 0; i < buttons.length; i++) {
       let button = buttons[i];
@@ -25,17 +21,13 @@ const discountClick = (newPrices) => {
         const cardId = e.currentTarget.closest('.cart-item').id;
         let priceId = document.getElementById("price" + cardId);
         let selectedPrice = priceId.innerHTML;
-        bookDiscount(selectedPrice);
-                console.log(newPrice);
-        // let discount = bookDiscount(priceId.innerHTML);
-        // console.log(discount);
-        // console.log(discountPrice);
-        // priceId.innerHTML = `$${discountPrice}`;
-
+        selectedPrice = bookDiscount(selectedPrice);
+                console.log(selectedPrice);
+        priceId.innerHTML = `$${selectedPrice}`;
           });
         }
       };
-    // }
+
 
 
 export { createCartCard, discountClick };
