@@ -6,7 +6,6 @@ const printToDom = (stringToPrint, divId) => {
 const bookDiscount = (selectedPrice) => {
    let priceString = selectedPrice.replace(/[$]/g,""); 
   let newPrice = (parseFloat(priceString) - (parseFloat(priceString) * .12)).toFixed(2);
-  console.log(newPrice);
   return newPrice;
 };
 

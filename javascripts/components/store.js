@@ -15,9 +15,9 @@ const books = [
   },
 
 {
-    image: "https://images-na.ssl-images-amazon.com/images/I/51f8R-RYkKL.jpg",
-    imageAlt: "Go the F*ck To Sleep Cover",
-    title: "Go The Heck To Sleep",
+    image: "https://images-na.ssl-images-amazon.com/images/I/619JrJuUQqL.jpg",
+    imageAlt: "You Have To F*cking Eat",
+    title: "You Have To F*cking Eat",
     description:
       "A laugh-out-loud, adults-only bedtime story for parents familiar with the age-old struggle of putting their kids to bed.",
     price: "11.00",
@@ -26,16 +26,9 @@ const books = [
 
 ];
 
-// const getBook = () => {
-//     return selectedBook;
-// }
-
-// const getBook = (bookName) => {
-//     const bookIndex = books.findIndex(() => books.name === bookName);
-//     return books[bookIndex];
-//   };
-
-
+const getBook = () => {
+    return books;
+}
 
 const createBookCard = () => {
   for (let i = 0; i < books.length; i++) {
@@ -85,5 +78,4 @@ const matchedBook = (selectedTitle) => {
 }
 }
 
-// matchedBook();
-export { createBookCard, addToCartButtonEvent};
+export { createBookCard, addToCartButtonEvent, getBook};

@@ -26,6 +26,7 @@ h1 {
 
 .card {
   display: inline-block;
+  border: solid pink;
 }
 
 #cartCard {
