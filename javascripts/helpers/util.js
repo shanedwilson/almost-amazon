@@ -3,9 +3,11 @@ const printToDom = (stringToPrint, divId) => {
   selectedDiv.innerHTML = stringToPrint;
 };
 
-const bookDiscount = (bookPrice) => {
-  let newPrice = (parseFloat(bookPrice) - (parseFloat(bookPrice) * .12)).toFixed(2);
+const bookDiscount = (selectedPrice) => {
+   let priceString = selectedPrice.replace(/[$]/g,""); 
+  let newPrice = (parseFloat(priceString) - (parseFloat(priceString) * .12)).toFixed(2);
+  console.log(newPrice);
   return newPrice;
 };
 
-export { printToDom, bookDiscount};
+export { printToDom, bookDiscount, newPrice};

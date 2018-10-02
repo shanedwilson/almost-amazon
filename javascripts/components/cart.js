@@ -1,42 +1,41 @@
-import { printToDom, bookDiscount} from "../helpers/util.js";
-import { getBook } from "./store.js";
+import { printToDom, bookDiscount, newPrice} from "../helpers/util.js";
+// import { selectedBook } from "./store.js";
 
 let cartString = "";
+let counter = "0"
+// let discountPrice = newPrice;
 
-const createCartCard = () => {
-    const book = getBook(); 
-  for (let i = 0; i < book.length; i++) {
-      if (book[i].discount === true) {
-    const newPrice =  bookDiscount(book[i].price);
-    cartString += `    <div class="col-sm-3">
-    <div class="card" id="cart-card" style="width: 13rem;">
-        <h5 id="cart-header">Cart</h5>
-        <img class="card-img-top" src="${book[i].image}" alt="${
-      book[i].imageAlt
-    }">
-        <div class="card-body">
-            <h5 class="card-title" id="cart-title">${book[i].title}</h5>
-            <h6 class="card-price" id="cart-total">Total: $${newPrice}</h6>
-            <button type="button" id="discount-button" class="discount-btn btn-danger">Apply Discount</button>
-        </div>
-    </div>
-    </div>`;
-  }
-  printToDom(cartString, "cartCard");
+const createCartCard = (selectedTitle, selectedPrice) => {
+    cartString += `<div id="${counter}"class="cart-item">`;
+    cartString += `<h5>${selectedTitle}</h5>`;
+    cartString += `<p id="price${counter}">${selectedPrice}</p>`;
+    cartString += ` <button type="button" id="discount-button${counter}" class="discount-btn btn-danger">Apply Discount</button>`
+    cartString += `</div>`;
+    printToDom(cartString, "cartCard")
+    counter ++;
+    // bookDiscount(selectedPrice)
+    // console.log(newPrice)
 };
-}
 
-// const discountButtonEvent = () => {
-//     const book =getBook();
-//     let cards = document.getElementByiD("cart-card");
-//     for (let i = 0; i < cards.length; i++) {
-//       let card = cards[i];
-//       card.addEventListener("click", () => {
-//           if (${book[i].discount} === true) {
-//         bookDiscount();
-//       });
-//     }
-//     }
-//   };
+const discountClick = (newPrices) => {
+    let buttons = document.getElementsByClassName("discount-btn")
+    for (let i = 0; i < buttons.length; i++) {
+      let button = buttons[i];
+      button.addEventListener("click", (e) => {
+        const cardId = e.currentTarget.closest('.cart-item').id;
+        let priceId = document.getElementById("price" + cardId);
+        let selectedPrice = priceId.innerHTML;
+        bookDiscount(selectedPrice);
+                console.log(newPrice);
+        // let discount = bookDiscount(priceId.innerHTML);
+        // console.log(discount);
+        // console.log(discountPrice);
+        // priceId.innerHTML = `$${discountPrice}`;
 
-export { createCartCard };
+          });
+        }
+      };
+    // }
+
+
+export { createCartCard, discountClick };
