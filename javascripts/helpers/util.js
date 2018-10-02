@@ -3,4 +3,10 @@ const printToDom = (stringToPrint, divId) => {
   selectedDiv.innerHTML = stringToPrint;
 };
 
-export { printToDom };
+const bookDiscount = (selectedPrice) => {
+   let priceString = selectedPrice.replace(/[$]/g,""); 
+  let newPrice = (parseFloat(priceString) - (parseFloat(priceString) * .12)).toFixed(2);
+  return newPrice;
+};
+
+export { printToDom, bookDiscount };

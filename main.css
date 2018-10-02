@@ -26,12 +26,17 @@ h1 {
 
 .card {
   display: inline-block;
+  border: solid pink;
 }
 
 #cartCard {
   margin-right: 25px;
   margin-top: auto;
   margin-bottom: auto;
+}
+
+#discount-button{
+    text-align: center;
 }
 
 #bookCard {
