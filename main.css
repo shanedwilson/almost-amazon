@@ -1,5 +1,5 @@
 body {
-  background-color: aquamarine;
+  background-color: lightgray;
 }
 
 h1 {
@@ -20,25 +20,14 @@ h1 {
   text-align: center;
 }
 
-#store-container {
-  display: flex;
-}
-
-.card {
-  display: inline-block;
-  border: solid pink;
-}
-
-#cartCard {
-  margin-right: 25px;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
 #discount-button{
     text-align: center;
 }
 
-#bookCard {
+/* #bookCard {
   margin-left: 25px;
-}
+} */
+
+/* .cart-item {
+    width: auto;
+} */

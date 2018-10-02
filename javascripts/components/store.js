@@ -34,7 +34,7 @@ const createBookCard = () => {
   for (let i = 0; i < books.length; i++) {
     newString += `
     <div class="col-sm-3">
-    <div class="card" id="${i}" style="width: 15rem;">
+    <div class="card" id="${i}">
         <img class="card-img-top" src="${books[i].image}" alt="${
       books[i].imageAlt
     }">
@@ -46,6 +46,7 @@ const createBookCard = () => {
               i
             ]}" type="button" class="btn btn-primary float-right">Add To Cart</button>
         </div>
+    </div>
     </div>`;
   }
   printToDom(newString, "bookCard");
