@@ -10,7 +10,8 @@ const book = [
     title: "Go The F*ck To Sleep",
     description:
       "A laugh-out-loud, adults-only bedtime story for parents familiar with the age-old struggle of putting their kids to bed.",
-    price: "$12.00"
+    price: "12.00",
+    discount: true
   }
 ];
 
@@ -29,7 +30,7 @@ const createBookCard = () => {
         <div class="card-body">
             <h5 class="card-title">${book[i].title}</h5>
             <p class="card-text">${book[i].description}</p>
-            <h6 class="card-price float-left">${book[i].price}</h6>
+            <h6 class="card-price float-left">$${book[i].price}</h6>
             <button id="cart-button${[
               i
             ]}" type="button" class="btn btn-primary float-right">Add To Cart</button>
