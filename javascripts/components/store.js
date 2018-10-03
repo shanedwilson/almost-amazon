@@ -55,11 +55,12 @@ const createBookCard = () => {
 
 
 const addToCartButtonEvent = () => {
-  let cards = document.getElementsByClassName("card");
-  for (let i = 0; i < cards.length; i++) {
-    let card = cards[i];
-    card.addEventListener("click", (e) => {
-        let bookId = e.currentTarget.id;
+  let buttons = document.getElementsByClassName("btn");
+  for (let i = 0; i < buttons.length; i++) {
+    let button = buttons[i];
+    button.addEventListener("click", (e) => {
+        let bookId = e.currentTarget.closest('.card').id;;
+        console.log(bookId);
         let titleId = document.getElementById('title' + bookId);
         let priceId = document.getElementById('book-price' + bookId );
         let selectedTitle = titleId.innerHTML;
