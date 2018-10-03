@@ -1,4 +1,4 @@
-import {createBookCard, addToCartButtonEvent } from "./components/store.js";
+import { createBookCard, addToCartButtonEvent } from "./components/store.js";
 
 const initializeApp = () => {
   createBookCard();

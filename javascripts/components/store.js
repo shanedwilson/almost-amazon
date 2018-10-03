@@ -14,7 +14,7 @@ const books = [
     discountAvailable: true
   },
 
-{
+  {
     image: "https://images-na.ssl-images-amazon.com/images/I/619JrJuUQqL.jpg",
     imageAlt: "You Have To F*cking Eat",
     title: "You Have To F*cking Eat",
@@ -22,13 +22,12 @@ const books = [
       "A laugh-out-loud, adults-only bedtime story for parents familiar with the age-old struggle of putting their kids to bed.",
     price: "11.00",
     discountAvailable: true
-}  
-
+  }
 ];
 
 const getBook = () => {
-    return books;
-}
+  return books;
+};
 
 const createBookCard = () => {
   for (let i = 0; i < books.length; i++) {
@@ -41,7 +40,9 @@ const createBookCard = () => {
         <div class="card-body">
             <h5 class="card-title" id="title${i}">${books[i].title}</h5>
             <p class="card-text">${books[i].description}</p>
-            <h6 class="card-price float-left" id="book-price${i}">$${books[i].price}</h6>
+            <h6 class="card-price float-left" id="book-price${i}">$${
+      books[i].price
+    }</h6>
             <button id="cart-button${[
               i
             ]}" type="button" class="btn btn-primary float-right">Add To Cart</button>
@@ -52,32 +53,30 @@ const createBookCard = () => {
   printToDom(newString, "bookCard");
 };
 
-
-
 const addToCartButtonEvent = () => {
   let buttons = document.getElementsByClassName("btn");
   for (let i = 0; i < buttons.length; i++) {
     let button = buttons[i];
-    button.addEventListener("click", (e) => {
-        let bookId = e.currentTarget.closest('.card').id;;
-        console.log(bookId);
-        let titleId = document.getElementById('title' + bookId);
-        let priceId = document.getElementById('book-price' + bookId );
-        let selectedTitle = titleId.innerHTML;
-        let selectedPrice = priceId.innerHTML;
+    button.addEventListener("click", e => {
+      let bookId = e.currentTarget.closest(".card").id;
+      console.log(bookId);
+      let titleId = document.getElementById("title" + bookId);
+      let priceId = document.getElementById("book-price" + bookId);
+      let selectedTitle = titleId.innerHTML;
+      let selectedPrice = priceId.innerHTML;
       createCartCard(selectedTitle, selectedPrice);
       matchedBook(selectedTitle);
     });
   }
 };
 
-const matchedBook = (selectedTitle) => {
-    for (let i = 0; i < books.length; i ++) {
-        if (books[i].title === selectedTitle) {
-            let selectedBook = books[i];
-            discountClick(selectedBook);
-        } 
-}
-}
+const matchedBook = selectedTitle => {
+  for (let i = 0; i < books.length; i++) {
+    if (books[i].title === selectedTitle) {
+      let selectedBook = books[i];
+      discountClick(selectedBook);
+    }
+  }
+};
 
-export { createBookCard, addToCartButtonEvent, getBook};
+export { createBookCard, addToCartButtonEvent, getBook };
