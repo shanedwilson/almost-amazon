@@ -11,7 +11,7 @@ At minimum your Almost Amazon site should have:
 
 ##Screenshots
 
-![main image](./imgages/main-screenshot.png)
+![main image](./screenshots/main-screenshot.png)
 
 ## How to run this project:
 
