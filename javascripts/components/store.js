@@ -59,7 +59,6 @@ const addToCartButtonEvent = () => {
     let button = buttons[i];
     button.addEventListener("click", e => {
       let bookId = e.currentTarget.closest(".card").id;
-      console.log(bookId);
       let titleId = document.getElementById("title" + bookId);
       let priceId = document.getElementById("book-price" + bookId);
       let selectedTitle = titleId.innerHTML;
