@@ -23,21 +23,14 @@ const discountClick = () => {
     button.addEventListener("click", e => {
       const cardId = e.currentTarget.closest(".cart-item").id;
       let priceId = document.getElementById("price" + cardId);
-      let titleId = document.getElementById("title" + cardId);
       let buttonId = document.getElementById("button" + cardId);
 
       let selectedPrice = priceId.innerHTML;
-      let selectedTitle = titleId.innerHTML;
       selectedPrice = bookDiscount(selectedPrice);
       priceId.innerHTML = `$${selectedPrice}`;
       buttonId.innerHTML = "Discount Applied";
-      let cartBooks = getBook();
-      cartBooks.forEach(cartBook => {
-        if (selectedTitle === cartBook.title) {
-          button.disabled = true;
-        }
-      });
-    });
+      button.disabled = true;
+    })
   }
 };
 
