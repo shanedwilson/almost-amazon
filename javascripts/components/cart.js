@@ -1,10 +1,10 @@
-import { printToDom, bookDiscount } from "../helpers/util.js";
+import { bookDiscount, addToDom } from "../helpers/util.js";
 import { getBook } from "./store.js";
 
-let cartString = "";
 let counter = "0";
 
 const createCartCard = (selectedTitle, selectedPrice) => {
+  let cartString = "";
   cartString += `<div class="card text-center m-2">`;
   cartString += `<div id="${counter}"class="cart-item">`;
   cartString += `<h5 class="text-center" id="title${counter}">${selectedTitle}</h5>`;
@@ -12,7 +12,7 @@ const createCartCard = (selectedTitle, selectedPrice) => {
   cartString += ` <button type="button" id="button${counter}" class="text-center discount-btn btn-danger">Apply Discount</button>`;
   cartString += `</div>`;
   cartString += `</div>`;
-  printToDom(cartString, "cartCard");
+  addToDom(cartString, "cartCard");
   counter++;
 };
 
@@ -36,7 +36,6 @@ const discountClick = () => {
       cartBooks.forEach(cartBook => {
         if (selectedTitle === cartBook.title) {
           cartBook.discountAvailable = false;
-          console.log(cartBook.discountAvailable);
         }
       })
     })
