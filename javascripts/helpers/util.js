@@ -3,6 +3,11 @@ const printToDom = (stringToPrint, divId) => {
   selectedDiv.innerHTML = stringToPrint;
 };
 
+const addToDom = (stringToPrint, divId) => {
+  let selectedDiv = document.getElementById(divId);
+  selectedDiv.innerHTML += stringToPrint;
+};
+
 const bookDiscount = selectedPrice => {
   let priceString = selectedPrice.replace(/[$]/g, "");
   let newPrice = (
@@ -12,4 +17,4 @@ const bookDiscount = selectedPrice => {
   return newPrice;
 };
 
-export { printToDom, bookDiscount };
+export { printToDom, bookDiscount, addToDom };
